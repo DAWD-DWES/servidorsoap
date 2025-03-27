@@ -1,8 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
-use Clases\Operaciones;
-
+require './src/Operaciones.php';
 $uri = 'http://localhost/dwes06_server/servidorSoap';
 $parametros = ['uri' => $uri];
 try {
