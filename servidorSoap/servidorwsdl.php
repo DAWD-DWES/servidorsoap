@@ -1,4 +1,5 @@
 <?php
+require './vendor/autoload.php';
 
 use ServSOAP\OperacionesWsdl;
 $wsdl = "http://localhost/servidorsoap/servidorSoap/operaciones.wsdl";
