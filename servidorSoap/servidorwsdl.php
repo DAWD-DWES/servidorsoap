@@ -1,13 +1,13 @@
 <?php
 
-require './src/OperacionesWsdl.php';
-$wsdl = "http://localhost/dwes06_server/servidorSoap/operaciones.wsdl";
+use ServSOAP\OperacionesWsdl;
+$wsdl = "http://localhost/servidorsoap/servidorSoap/operaciones.wsdl";
 
 try {
-    $server = new SoapServer($wsdl);
-    $server->setClass(OperacionesWsdl::class);
-    $server->handle();
+// pointing to the current file here
+    $soap = new Laminas\Soap\Server($wsdl);
+    $soap->setClass(OperacionesWsdl::class);
+    $soap->handle();
 } catch (SoapFault $f) {
     die("error en server: " . $f->getMessage());
 }
-

@@ -1,11 +1,22 @@
 <?php
 
+namespace ServSOAP;
+
+use ServSOAP\Dto\{
+    SumaRequest,
+    SumaResponse,
+    RestaRequest,
+    RestaResponse,
+    SaludoRequest,
+    SaludoResponse
+};
+
 class OperacionesWsdl
 {
     /** Realiza la operación de resta
      * 
-     * @param RestaRequest $request
-     * @return RestaResponse
+     * @param ServSOAP\Dto\RestaRequest $request
+     * @return ServSOAP\Dto\RestaResponse
      */
     public function resta($request)
     {
@@ -16,8 +27,8 @@ class OperacionesWsdl
 
     /** Realiza la operación de suma
      * 
-     * @param SumaRequest $request
-     * @return SumaResponse
+     * @param ServSOAP\Dto\SumaRequest $request
+     * @return ServSOAP\Dto\SumaResponse
      */
     public function suma($request)
     {
@@ -28,8 +39,8 @@ class OperacionesWsdl
 
     /** Realiza la operación de saludo
      * 
-     * @param SaludoRequest $request
-     * @return SaludoResponse
+     * @param ServSOAP\Dto\SaludoRequest $request
+     * @return ServSOAP\Dto\SaludoResponse
      */
     public function saludo($request)
     {
@@ -38,62 +49,3 @@ class OperacionesWsdl
         return $response;
     }
 }
-
-class SumaRequest
-{
-    /**
-     * @var float
-     */
-    public $a;
-
-    /**
-     * @var float
-     */
-    public $b;
-}
-
-class SumaResponse
-{
-    /**
-     * @var float
-     */
-    public $resultado;
-}
-
-class RestaRequest
-{
-    /**
-     * @var float
-     */
-    public $a;
-
-    /**
-     * @var float
-     */
-    public $b;
-}
-
-class RestaResponse
-{
-    /**
-     * @var float
-     */
-    public $resultado;
-}
-
-class SaludoRequest
-{
-    /**
-     * @var string
-     */
-    public $texto;
-}
-
-class SaludoResponse
-{
-    /**
-     * @var string
-     */
-    public $saludo;
-}
-

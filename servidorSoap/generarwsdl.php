@@ -1,13 +1,13 @@
 <?php
 
-require '../vendor/autoload.php';
-require_once './src/OperacionesWsdl.php';
+require './vendor/autoload.php';
 
 use Laminas\Soap\AutoDiscover;
+use ServSOAP\OperacionesWsdl;
 
 $autodiscover = new AutoDiscover();
 $autodiscover->setClass(OperacionesWsdl::class)
-        ->setUri('http://localhost/dwes06_server/servidorSoap/servidorwsdl.php');
+        ->setUri('http://localhost/servidorsoap/servidorSoap/servidorwsdl.php');
 
 // Obtener el XML del WSDL
 $wsdlXml = $autodiscover->toXml();

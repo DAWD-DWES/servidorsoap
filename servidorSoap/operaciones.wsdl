@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
-             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-             xmlns:tns="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php" 
-             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-             xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-             xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" 
-             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
-             name="OperacionesWsdl" 
-             targetNamespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="OperacionesWsdl" targetNamespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php">
     <types>
-        <xsd:schema targetNamespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php">
+        <xsd:schema targetNamespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php">
             <xsd:complexType name="RestaRequest">
                 <xsd:all>
                     <xsd:element name="a" type="xsd:float" nillable="true"/>
@@ -46,17 +38,17 @@
     </types>
     <portType name="OperacionesWsdlPort">
         <operation name="resta">
-            <documentation>resta</documentation>
+            <documentation>Realiza la operación de resta</documentation>
             <input message="tns:restaIn"/>
             <output message="tns:restaOut"/>
         </operation>
         <operation name="suma">
-            <documentation>suma</documentation>
+            <documentation>Realiza la operación de suma</documentation>
             <input message="tns:sumaIn"/>
             <output message="tns:sumaOut"/>
         </operation>
         <operation name="saludo">
-            <documentation>saludo</documentation>
+            <documentation>Realiza la operación de saludo</documentation>
             <input message="tns:saludoIn"/>
             <output message="tns:saludoOut"/>
         </operation>
@@ -64,36 +56,36 @@
     <binding name="OperacionesWsdlBinding" type="tns:OperacionesWsdlPort">
         <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="resta">
-            <soap:operation soapAction="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php#resta"/>
+            <soap:operation soapAction="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php#resta"/>
             <input>
-                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
             </input>
             <output>
-                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
             </output>
         </operation>
         <operation name="suma">
-            <soap:operation soapAction="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php#suma"/>
+            <soap:operation soapAction="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php#suma"/>
             <input>
-                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
             </input>
             <output>
-                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
             </output>
         </operation>
         <operation name="saludo">
-            <soap:operation soapAction="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php#saludo"/>
+            <soap:operation soapAction="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php#saludo"/>
             <input>
-                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
             </input>
             <output>
-                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
             </output>
         </operation>
     </binding>
     <service name="OperacionesWsdlService">
         <port name="OperacionesWsdlPort" binding="tns:OperacionesWsdlBinding">
-            <soap:address location="http://localhost/dwes06_server/servidorSoap/servidorwsdl.php"/>
+            <soap:address location="http://localhost/servidorsoap/servidorSoap/servidorwsdl.php"/>
         </port>
     </service>
     <message name="restaIn">
